@@ -34,7 +34,8 @@ const signup=async(req,res)=>{
         if(user){
             return res.status(201).json({
                 status:'succes',
-                message:'succesfully registered'
+                message:'succesfully registered',
+                user
             })
         }
         
