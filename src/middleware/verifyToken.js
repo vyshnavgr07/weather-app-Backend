@@ -20,7 +20,7 @@ const token=authHeader.split(" ")[1]
      if(err){
         console.log(err,"error")
       return  res.status(401).json({
-            status:'failed',
+            status:'failed', 
             message:'token not provoded'
         })
      }else{

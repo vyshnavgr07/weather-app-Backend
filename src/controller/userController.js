@@ -10,7 +10,7 @@ const signup=async(req,res)=>{
     try {
         const {name,email,password}=req.body;
         if(!name || !email ||!password){
-           res.status(400).json({
+           res.status(400).json({ 
             status:'failed',
             message:'please provide user credential'
            })
@@ -50,7 +50,7 @@ const signup=async(req,res)=>{
 
 
 
-const userLogin=async(req,res)=>{
+const userLogin=async(req,res,next)=>{
     try {
         const {email,password}=req.body;
         if(!email || !password){
@@ -127,7 +127,7 @@ return res.status(200).json({
 }
 }
 
-const getForcast = async (req, res) => {
+const getForcast = async (req, res,next) => {
     try {
         console.log('success');
         const { lat, lon } = req.query;
@@ -154,6 +154,7 @@ const getForcast = async (req, res) => {
             status: 'error',
             message: 'Failed to fetch weather forecast'
         });
+        next(error)
     }
 };
 
@@ -194,7 +195,6 @@ try {
         newFavoriteCity
       })
 
-      console.log(newFavoriteCity,"favv");
 } catch (error) {   
     console.log(error);
 }

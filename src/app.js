@@ -8,8 +8,8 @@ app.use(express.urlencoded({extended:true}))
 app.use(cookieParser())
 const userRouter=require('../src/routes/userRouter')
 
-app.use('/',userRouter)
+app.use('/',userRouter) 
 
 
 
-module.exports=app
+module.exports=app    

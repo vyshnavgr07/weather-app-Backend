@@ -7,4 +7,4 @@ const prisma = new PrismaClient()
 
 
 
-module.exports=prisma
+module.exports=prisma    
